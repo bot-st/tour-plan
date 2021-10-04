@@ -43,5 +43,26 @@ $(document).ready(function () {
     modalOverlay.removeClass('modal__overlay--visible');
     modalDialog.removeClass('modal__dialog--visible');
   }
-
+  // Обработка форм
+  $('.form').each(function(){
+    $(this).validate({
+      errorClass: "invalid",
+      messages: {
+        name: {
+          required: "Please enter your name",
+          minlength: "Имя не должно быть короче двух символов",
+        },
+        email: {
+          required: "Please enter your email",
+          email: "Your email address must be in the format of name@domain.com"
+        },
+        phone: {
+          required: "Please enter your phone",
+        },
+      },
+    });
+  })
+  $(document).ready(function () {
+    $('.phone').mask('(+7) 0000-0000');
+  })
 });
