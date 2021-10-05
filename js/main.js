@@ -65,4 +65,5 @@ $(document).ready(function () {
   $(document).ready(function () {
     $('.phone').mask('(+7) 0000-0000');
   })
+   AOS.init();
 });
