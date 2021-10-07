@@ -62,6 +62,9 @@
     width: 340px
     height: 250px
   .footer
+    &__pay
+      &-details
+        justify-content: space-between
     &-wrapper
       grid-template-columns: repeat(6, 1fr)
       grid-row-gap: 40px
@@ -212,6 +215,13 @@
     &__input
       &-group
         flex-basis: 100%
+    &__pay
+      &-details
+        flex-direction: column
+        align-items: start
+    &__ul
+      &-paylist
+        margin-bottom: 10px
 @media (max-width: 576px)
   .logo
     width: 99px
