@@ -38,11 +38,8 @@
   width: 350px
   height: 55px
   border-radius: 4px
-  overflow: hidden
   .invalid + label
     position: absolute
-    padding-top: 35px
-    padding-left: 70px
   &__input
     position: absolute
     width: 100%
@@ -54,6 +51,7 @@
     font-weight: 300
     font-size: 14px
     line-height: 18px
+    border-radius: 4px
   &__button
     position: absolute
     min-width: 65px
@@ -64,3 +62,8 @@
     background-color: $primary
     color: $light
     cursor: pointer
+    border-radius: 0 4px 4px 0
+    font-style: normal
+    font-weight: bold
+    font-size: 12px
+    line-height: 15px
