@@ -93,6 +93,9 @@
     &__categories
       grid-row: 2 / 3
       grid-column: span 2
+  .modal
+    &__form
+      min-width: 250px
 @media (max-width: 768px)
   .container
     max-width: 576px
@@ -100,13 +103,12 @@
   body
     padding-top: 78px
   .navbar
-    &__mobile
-      &--fixed
-        position: fixed
-        left: 0
-        right: 0
-        top: 0
-        z-index: 99
+    &-mobile
+      position: fixed
+      left: 0
+      right: 0
+      top: 0
+      z-index: 99
     &__user, &__search
       &--mobile
         &--hidden
@@ -306,5 +308,22 @@
         background-color: $hover
   .footer
     &__button
+      &:hover
+        background-color: $hover
+  .navbar
+    &-menu
+      &__link
+        &:hover
+          color: $hover
+  .booking
+    &__number
+      &:hover
+        color: $hover
+  .footer
+    &__link
+      &:hover
+        color: $hover
+  .button
+    &__home
       &:hover
         background-color: $hover

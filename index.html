@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="navbar navbar__mobile--fixed">
+  <header class="navbar navbar-mobile">
     <div class="container">
       <div class="navbar-top">
         <a href="index.html" class="logo" data-aos="fade-right" data-aos-delay="100">
@@ -186,8 +186,10 @@
         subscribe to our
         <span class="newsletter-title__strong">Newsletter</span>
       </h2>
-      <form action="#" class="subscribe newsletter__subscribe">
-        <input type="text" class="subscribe__input" placeholder="Your email address">
+      <form action="send.php" method="POST" class="subscribe newsletter__subscribe form">
+        <div class="newsletter__input-group">
+          <input type="text" class="subscribe__input" placeholder="Your email address" name="email" required>
+        </div>
         <button class="subscribe__button">Send</button>
       </form>
     </div>
@@ -260,7 +262,11 @@
                 <!-- ./rating -->
               </div>
               <!-- /.reviews-slider__profile -->
-              <p class="reviews-slider__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quasi cupiditate laborum nostrum magnam voluptate. Saepe porro, dolor minima nisi, libero molestias perspiciatis reiciendis maiores ipsam id, maxime temporibus sunt accusamus officia nostrum sequi deserunt voluptatem. Quaerat inventore nihil quas praesentium quos, tempore facere amet aperiam, numquam, perferendis molestiae voluptate doloribus obcaecati rerum magnam dolor facilis. Mollitia eligendi fugiat, cupiditate soluta repudiandae et error velit cum neque? Perspiciatis, impedit sequi.</p>
+              <p class="reviews-slider__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quasi cupiditate laborum nostrum magnam voluptate. Saepe porro, dolor minima nisi, libero molestias perspiciatis reiciendis maiores ipsam id, maxime temporibus sunt accusamus officia nostrum sequi deserunt voluptatem. Quaerat inventore nihil quas praesentium quos, tempore facere amet aperiam, numquam, perferendis molestiae voluptate doloribus obcaecati rerum magnam dolor facilis. Mollitia eligendi fugiat, cupiditate soluta repudiandae et error velit cum neque? Perspiciatis, impedit sequi.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quasi cupiditate laborum nostrum magnam voluptate. Saepe
+              porro, dolor minima nisi, libero molestias perspiciatis reiciendis maiores ipsam id, maxime temporibus sunt accusamus
+              officia nostrum sequi deserunt voluptatem. Quaerat inventore nihil quas praesentium quos, tempore facere amet aperiam,
+              numquam, perferendis molestiae voluptate doloribus obcaecati rerum magnam dolor facilis. Mollitia eligendi fugiat,
+              cupiditate soluta repudiandae et error velit cum neque? Perspiciatis, impedit sequi.</p>
             </div>
             <!-- /.reviews-slider__item -->
           </div>
@@ -372,16 +378,19 @@
             9748 Blossom Hill Rd undefined Lansing, Idaho 68545 United States</li>
              <li class="footer__item footer__item--mb-2">
                <div class="footer__icon-wrapper">
-                <a href="tel:269 1500"><img class="footer__icon" src="img/contact-phone-call.svg" alt="phone"></a>
+                <img class="footer__icon" src="img/contact-phone-call.svg" alt="phone">
                </div>
-            Tel (business hours) : 269 1500 <br>
-            Tel (hotline) Monday - Saturday: 52-56-61-38 (08:00 am – 20:00 pm) <br>
-            Tel (hotline) Sunday: 52-56-61-38 (08:00 am – 14:00 pm)</li>
+            <div class="footer__item-contacts-links">
+              Tel (business hours) : <a href="tel:269-1500" class="footer__link">269 1500</a> <br>
+              Tel (hotline) Monday - Saturday: <a href="tel:52-56-61-38" class="footer__link">52-56-61-38</a> (08:00 am – 20:00 pm)
+              <br>
+              Tel (hotline) Sunday: <a href="tel:52-56-61-38" class="footer__link">52-56-61-38</a> (08:00 am – 14:00 pm)
+            </div></li>
              <li class="footer__item footer__item--mb-2">
                <div class="footer__icon-wrapper">
-                <a href="mailto:cherly.lawson@example.com"><img class="footer__icon" src="img/email.svg" alt="email"></a>
+                <img class="footer__icon" src="img/email.svg" alt="email">
                </div>
-            cherly.lawson@example.com</li>
+            <a class="footer__link" href="mailto:cherly.lawson@example.com">cherly.lawson@example.com</a></li>
            </ul>
          </div>
          <!-- /.footer__contact-details -->
@@ -389,10 +398,10 @@
            <h3 class="footer__title footer__title--mb-3">Send us a message</h3>
            <form action="send.php" method="POST" class="footer__form form">
              <div class="footer__input-group">
-              <input type="text" class="input footer__input" placeholder="Your Full Name*" name="name" required>
+              <input type="text" class="input footer__input" placeholder="Your Full Name*" name="name" required minlength="2">
              </div>
              <div class="footer__input-group">
-              <input type="text" class="input footer__input phone" placeholder="Phone Number*" name="phone" required>
+              <input type="text" class="input footer__input phone" placeholder="Phone Number*" name="phone" required minlength="12">
              </div>
              <textarea class="message footer__message" placeholder="Message" name="message"></textarea>
              <button class="button footer__button" type="submit">Send</button>
@@ -425,7 +434,7 @@
       <h3 class="modal__title modal__title--mb-3">Booking</h3>
       <form action="send.php" method="POST" class="modal__form form">
         <input type="text" class="input modal__input" placeholder="Your Full Name*" name="name" required minlength="2">
-        <input type="text" class="input modal__input phone" placeholder="Phone Number*" name="phone" required>
+        <input type="text" class="input modal__input phone" placeholder="Phone Number*" name="phone" required minlength="12">
         <input type="text" class="input modal__input" placeholder="Email*" name="email" required>
         <textarea class="message modal__message" placeholder="Message" name="message"></textarea>
         <button class="button modal__button" type="submit">Send</button>
@@ -444,8 +453,8 @@
         </a>
         <h3 class="modal__title modal__title--mb-3">Send us a feedback</h3>
         <form action="send.php" method="POST" class="modal__form form">
-          <input type="text" class="input modal__input" placeholder="Your Full Name*" name="name" required>
-          <input type="text" class="input modal__input phone" placeholder="Phone Number*" name="phone" required>
+          <input type="text" class="input modal__input" placeholder="Your Full Name*" name="name" required minlength="2">
+          <input type="text" class="input modal__input phone" placeholder="Phone Number*" name="phone" required minlength="12">
           <input type="text" class="input modal__input" placeholder="Email*" name="email" required>
           <textarea class="message modal__message" placeholder="Message" name="message"></textarea>
           <button class="button modal__button" type="submit">Send</button>

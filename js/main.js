@@ -13,6 +13,7 @@ $(document).ready(function () {
   const reviewsSlider = new Swiper('.reviews-slider', {
     // Optional parameters
     loop: true,
+    autoHeight: true,
 
     // Navigation arrows
     navigation: {
@@ -50,7 +51,7 @@ $(document).ready(function () {
       messages: {
         name: {
           required: "Please enter your name",
-          minlength: "Имя не должно быть короче двух символов",
+          minlength: "Please enter at least 2 characters",
         },
         email: {
           required: "Please enter your email",
@@ -58,12 +59,13 @@ $(document).ready(function () {
         },
         phone: {
           required: "Please enter your phone",
+          minlength: "Please enter at least 12 characters",
         },
       },
     });
   })
   $(document).ready(function () {
-    $('.phone').mask('(+7) 0000-0000');
+    $('.phone').mask('+7 (000) 000-00-00');
   })
    AOS.init();
 });
